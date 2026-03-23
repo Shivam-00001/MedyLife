@@ -30,6 +30,12 @@ header .container {
     align-items: center;
     padding: 20px 0;
 }
+.container h1 span1{
+color: var(--primary);
+}
+.container h1 span{
+ color: var(--secondary);
+}
 .logo h1{color:#0077b6}
 .logo span{color:#00b4d8}
 .logo p{font-size:12px;color:#777}
@@ -40,7 +46,7 @@ nav a:hover{color:#0077b6}
 
 .mobile-menu{display:none;font-size:22px;cursor:pointer}
 
-.about-hero{background:linear-gradient(rgba(0,119,182,.8),rgba(0,180,216,.8)),url('https://images.unsplash.com/photo-1581595219315-a187dd40c322') center/cover;color:#fff;text-align:center;padding:100px 0}
+.about-hero{background:linear-gradient(rgba(0,119,182,.8),rgba(0,180,216,.8)),url('images/abhome.jpg') center/cover;color:#fff;text-align:center;padding:100px 0}
 .about-hero h1{font-size:42px}
 .about-hero p{margin-top:10px}
 
