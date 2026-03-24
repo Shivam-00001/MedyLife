@@ -166,6 +166,23 @@ nav ul li a:hover {
         display: block;
     }
 }
+/* WhatsApp Icon Style */
+.whatsapp-icon a {
+    color: #25D366;
+    font-size: 22px;
+    margin-left: 15px;
+}
+
+/* Right side push */
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+/* Last item ko right push karne ke liye */
+nav ul li.whatsapp-icon {
+    margin-left: auto;
+}
 
 /* Hero Section */
 .hero {
