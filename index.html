@@ -3,36 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedyLife Pathology | Accurate Diagnostic Solutions</title>
+    <title>MediLife Pathology | Accurate Diagnostic Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1><span>Medy</span>Life</h1>
-                <p>Pathology & Diagnostic Center</p>
-            </div>
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#team">Our Doctors</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-          <div class="mobile-menu" id="mobileMenu">
-    <i class="fas fa-bars"></i>
-</div>
-
-<nav id="mainNav">
+   <!-- Header -->
+<header id="header">
+    <div class="container">
+        
+        <!-- Logo -->
+        <div class="logo">
+            <img src="images/logo.png" alt="MediLife Lab">
+            <p>Pathology & Diagnostic Center</p>
         </div>
-    </header>
+
+        <!-- Navigation -->
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#team">Our Doctors</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Menu Icon -->
+        <div class="mobile-menu" id="mobileMenu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -93,12 +98,12 @@
     <section class="about" id="about">
         <div class="container">
             <div class="about-content">
-                <h2>About <span>MedyLife</span></h2>
+                <h2>About <span>MediLife</span></h2>
                 <p>We are a NABL-accredited pathology lab with 10+ years of experience in diagnostic excellence. Our team of certified pathologists ensures accurate and timely reports.</p>
                 <a href="about.html" class="btn-visit">Visit Us</a>
             </div>
             <div class="about-image">
-                <img src="images/about.jpg" alt="MedyLife Lab">
+                <img src="images/about.jpg" alt="MediLife Lab">
             </div>
         </div>
     </section>
@@ -184,7 +189,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        <p>"The blood test was completely painless and I got my reports within 6 hours! Highly recommend MedyLife for their professionalism."</p>
+                        <p>"The blood test was completely painless and I got my reports within 6 hours! Highly recommend MediLife for their professionalism."</p>
                         <h4>- Priya Sharma</h4>
                     </div>
                 </div>
@@ -225,38 +230,67 @@
     </section>
 
     <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contact <span>Us</span></h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
-                    <p>123 Medical Street, City, India</p>
-                    <h3><i class="fas fa-phone"></i> Phone</h3>
-                    <a href="tel:+919119625967">+91 9119625967</a>
-                    <h3><i class="fas fa-envelope"></i> Email</h3>
-                    <p>info@medylife.com</p>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Email" required>
-                        <input type="tel" placeholder="Phone">
-                        <textarea placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact <span>Us</span></h2>
 
-    <!-- Footer ---------->
+        <div class="contact-grid">
+
+            <!-- LEFT SIDE -->
+            <div class="contact-info">
+
+                <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                <p>
+                    Nagar panchayat chowk, road, near pani tanki,<br>
+                    Karauta, Maharajganj - 273312,<br>
+                    Uttar Pradesh, India
+                </p>
+
+                <!-- ✅ MAP (Address ke niche) -->
+                <div class="map-box">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7094.38910484087!2d83.571916!3d27.244427!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996a7fca693aac5%3A0x8775d765b9470636!2sMedilife%20pathology!5e0!3m2!1sen!2sin!4v1774262200057!5m2!1sen!2sin"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+                <h3><i class="fas fa-phone"></i> Phone</h3>
+                <a href="tel:+919119625967">+91 9119625967</a>
+
+                <h3><i class="fas fa-envelope"></i> Email</h3>
+                <a href="mailto:medilifepathmrj@gmail.com">
+                    medilifepathmrj@gmail.com
+                </a>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="contact-form">
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="phone" placeholder="Phone">
+                    <textarea name="message" placeholder="Your Message"></textarea>
+
+                    <!-- ✅ SAME BUTTON STYLE -->
+                    <button type="submit" class="btn">Send Message</button>
+                    <!-- agar tum btn-visit use kar rahe ho to ye use karo -->
+                    <!-- <button type="submit" class="btn-visit">Send Message</button> -->
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+  <!-- Footer -->
    <footer>
     <div class="container footer-container">
 
         <!-- Logo / About -->
         <div class="footer-box">
-            <h2><span>Medy</span>Life</h2>
+            <h2><span>Medi</span>Life Pathology</h2>
             <p>Accurate and reliable pathology services for a healthier life.</p>
         </div>
 
@@ -276,8 +310,8 @@
         <!-- Contact -->
         <div class="footer-box">
             <h3>Contact</h3>
-            <p><i class="fas fa-phone"></i> <a href="tel:+919119625967">+91 9119625967</a></p>
-            <p><i class="fas fa-envelope"></i> info@medylife.com</p>
+            <p><i class="fas fa-phone"></i><a href="tel:+919119625967">+91 9119625967</a></p>
+               <a href="mailto:medilifepathmrj@gmail.com">medilifepathmrj@gmail.com</a>
         </div>
 
         <!-- Social -->
@@ -288,16 +322,18 @@
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/919119625967?text=Hello%20Medilife%20Pathology!" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
             </div>
         </div>
 
     </div>
 
     <p class="copyright">
-        &copy; 2026 MedyLife Pathology. All Rights Reserved.
+        &copy; 2026 MediLife Pathology. All Rights Reserved.
     </p>
 </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
