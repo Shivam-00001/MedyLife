@@ -68,6 +68,9 @@ color: var(--primary);
     color: #00b4d8;
     font-weight: bold;
 }
+.facility-image div {
+    gap: 10px;
+}
 .facilities li{margin-bottom:10px;padding-left:20px;position:relative}
 .facilities li::before{content:'✔';position:absolute;left:0;color:#00b4d8}
 
@@ -84,4 +87,17 @@ nav ul{flex-direction:column;background:#fff;padding:20px}
 .facility-image div {   width: 220px;
     height: 250px;}
 .facilities li { font-size: 12px;}
+}
+@media(max-width:768px){
+
+    .facility-image div {
+        grid-template-columns: 1fr;  /* 🔥 yahi main fix hai */
+        width: 100%;
+        height: auto;
+    }
+
+    .facility-image img {
+        height: 57px;  /* optional (same height ke liye) */
+    }
+
 }
