@@ -276,18 +276,21 @@
 
             <!-- RIGHT SIDE -->
             <div class="contact-form">
-<form action="https://formsubmit.co/6cd53db3b56c5528977b7b762ae1c797" method="POST">
+      <form id="contactForm">
 
     <input type="text" name="name" placeholder="Name" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="tel" name="phone" placeholder="Phone">
     <textarea name="message" placeholder="Your Message"></textarea>
 
-    <input type="hidden" name="_subject" value="New Contact Message">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
+    <!-- OPTION SELECT -->
+    <select id="sendOption" required>
+        <option value="">Select Send Option</option>
+        <option value="email">Send via Email</option>
+        <option value="whatsapp">Send via WhatsApp</option>
+    </select>
 
-    <button type="submit">Send Message</button>
+    <button type="submit" class="btn">Send Message</button>
 
 </form>
             </div>
