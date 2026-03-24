@@ -1,8 +1,8 @@
 // ================= MOBILE MENU =================
-document.getElementById('mobileMenu').addEventListener('click', function() {
+document.getElementById('mobileMenu').addEventListener('click', function () {
     const nav = document.getElementById('mainNav');
     nav.classList.toggle('active');
-    
+
     const icon = this.querySelector('i');
     if (nav.classList.contains('active')) {
         icon.classList.remove('fa-bars');
@@ -16,9 +16,12 @@ document.getElementById('mobileMenu').addEventListener('click', function() {
 // Close menu when clicking link
 document.querySelectorAll('#mainNav a').forEach(link => {
     link.addEventListener('click', () => {
-        document.getElementById('mainNav').classList.remove('active');
-        document.querySelector('#mobileMenu i').classList.remove('fa-times');
-        document.querySelector('#mobileMenu i').classList.add('fa-bars');
+        const nav = document.getElementById('mainNav');
+        nav.classList.remove('active');
+
+        const icon = document.querySelector('#mobileMenu i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
     });
 });
 
@@ -37,21 +40,19 @@ function showTestimonial(n) {
     testimonials[currentTestimonial].style.display = 'flex';
 }
 
-setInterval(() => {
-    showTestimonial(currentTestimonial + 1);
-}, 5000);
-
 if (testimonials.length > 0) {
     showTestimonial(0);
+    setInterval(() => {
+        showTestimonial(currentTestimonial + 1);
+    }, 5000);
 }
 
 
 // ================= SMOOTH SCROLL =================
-document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
 
-        // Only prevent if target exists
         if (target) {
             e.preventDefault();
             target.scrollIntoView({
@@ -62,37 +63,34 @@ document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
 });
 
 
-// ================= SMOOTH NAVBAR HIDE/SHOW =================
+// ================= NAVBAR HIDE/SHOW =================
 let lastScrollTop = 0;
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", function () {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Prevent negative scroll
     if (currentScroll < 0) return;
 
-    // Threshold for smooth behavior
     if (Math.abs(currentScroll - lastScrollTop) > 10) {
-
         if (currentScroll > lastScrollTop && currentScroll > 100) {
-            // Scroll Down → Hide
-            header.classList.add("hide");
+            header.classList.add("hide"); // hide
         } else {
-            // Scroll Up → Show
-            header.classList.remove("hide");
+            header.classList.remove("hide"); // show
         }
-
         lastScrollTop = currentScroll;
     }
 
-    // Shadow effect
+    // shadow
     if (currentScroll > 50) {
         header.classList.add("scrolled");
     } else {
         header.classList.remove("scrolled");
     }
 });
+
+
+// ================= COUNTER (ACHIEVEMENTS) =================
 const counters = document.querySelectorAll('.counter');
 
 const startCounter = () => {
@@ -100,7 +98,7 @@ const startCounter = () => {
         const target = +counter.getAttribute('data-target');
         let count = 0;
 
-        const duration = 2000; // total animation time
+        const duration = 2000;
         const increment = target / (duration / 16);
 
         const updateCount = () => {
@@ -109,10 +107,9 @@ const startCounter = () => {
                 counter.innerText = Math.floor(count).toLocaleString();
                 requestAnimationFrame(updateCount);
             } else {
-                // final value
                 if (target >= 1000000) {
                     counter.innerText = "1M+";
-                    } else if (target === 99) {
+                } else if (target === 99) {
                     counter.innerText = target + "%";
                 } else {
                     counter.innerText = target + "+";
@@ -124,7 +121,7 @@ const startCounter = () => {
     });
 };
 
-// Run when visible
+// Observer
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -133,8 +130,16 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 });
-//----------------------------------------- mail sending--------------------------------------
-document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+// 🔥 IMPORTANT FIX
+const section = document.querySelector('.achievements');
+if (section) {
+    observer.observe(section);
+}
+
+
+// ================= WHATSAPP FORM =================
+document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
     let name = document.querySelector("input[name='name']").value;
@@ -146,9 +151,9 @@ Name: ${name}%0A
 Phone: ${phone}%0A
 Message: ${message}`;
 
-    // WhatsApp open
+    // Open WhatsApp
     window.open(`https://wa.me/919119625967?text=${text}`, "_blank");
 
-    // Form reset
+    // Reset form
     document.getElementById("contactForm").reset();
 });
