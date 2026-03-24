@@ -153,7 +153,7 @@ Message: ${message}`;
 
     // ✅ OPTION CHECK
     if (option === "whatsapp") {
-        window.open(`https://wa.me/919119625967?text=${whatsappMsg}`, "_blank");
+        window.open(`https://wa.me/6383814585?text=${whatsappMsg}`, "_blank");
     }
 
     else if (option === "email") {
