@@ -134,55 +134,13 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 //----------------------------------------- mail sending--------------------------------------
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
+function sendMail() {
     let name = document.querySelector("input[name='name']").value;
     let email = document.querySelector("input[name='email']").value;
-    let phone = document.querySelector("input[name='phone']").value;
     let message = document.querySelector("textarea[name='message']").value;
 
-    let option = document.getElementById("sendOption").value;
+    let subject = "New Contact Message";
+    let body = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
 
-    let text = `Hello Medilife Pathology,%0A
-Name: ${name}%0A
-Email: ${email}%0A
-Phone: ${phone}%0A
-Message: ${message}`;
-
-    if (option === "whatsapp") {
-        window.open(`https://wa.me/919119625967?text=${text}`, "_blank");
-
-        document.getElementById("contactForm").reset(); // ✅ sahi jagah
-    }
-
-    else if (option === "email") {
-
-        fetch("https://formsubmit.co/ajax/6cd53db3b56c5528977b7b762ae1c797", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                phone: phone,
-                message: message
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert("Email Sent Successfully ✅");
-
-            document.getElementById("contactForm").reset(); // ✅ sahi jagah
-        })
-        .catch(error => {
-            alert("Error sending email ❌");
-        });
-    }
-
-    else {
-        alert("Please select an option!");
-    }
-});
+    window.location.href = `mailto:shivambharati261@gmail.com?subject=${subject}&body=${body}`;
+}
