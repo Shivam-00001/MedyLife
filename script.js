@@ -134,13 +134,21 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 //----------------------------------------- mail sending--------------------------------------
-function sendMail() {
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
     let name = document.querySelector("input[name='name']").value;
-    let email = document.querySelector("input[name='email']").value;
+    let phone = document.querySelector("input[name='phone']").value;
     let message = document.querySelector("textarea[name='message']").value;
 
-    let subject = "New Contact Message";
-    let body = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+    let text = `Hello Medilife Pathology,%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Message: ${message}`;
 
-    window.location.href = `mailto:shivambharati261@gmail.com?subject=${subject}&body=${body}`;
-}
+    // WhatsApp open
+    window.open(`https://wa.me/919119625967?text=${text}`, "_blank");
+
+    // Form reset
+    document.getElementById("contactForm").reset();
+});
