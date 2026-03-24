@@ -144,23 +144,25 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
     let option = document.getElementById("sendOption").value;
 
-    // WhatsApp message
-    let whatsappMsg = `Hello Medilife Pathology,%0A
+    let text = `Hello Medilife Pathology,%0A
 Name: ${name}%0A
 Email: ${email}%0A
 Phone: ${phone}%0A
 Message: ${message}`;
 
-    // ✅ OPTION CHECK
     if (option === "whatsapp") {
-        window.open(`https://wa.me/6383814585?text=${whatsappMsg}`, "_blank");
+        window.open(`https://wa.me/919119625967?text=${text}`, "_blank");
+
+        document.getElementById("contactForm").reset(); // ✅ sahi jagah
     }
 
     else if (option === "email") {
-        fetch("https://formsubmit.co/ajax/shivambharati261@gmail.com", {
+
+        fetch("https://formsubmit.co/ajax/6cd53db3b56c5528977b7b762ae1c797", {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify({
                 name: name,
@@ -169,11 +171,14 @@ Message: ${message}`;
                 message: message
             })
         })
-        .then(response => {
-            alert("Email Sent Successfully!");
+        .then(response => response.json())
+        .then(data => {
+            alert("Email Sent Successfully ✅");
+
+            document.getElementById("contactForm").reset(); // ✅ sahi jagah
         })
         .catch(error => {
-            alert("Error sending email");
+            alert("Error sending email ❌");
         });
     }
 
