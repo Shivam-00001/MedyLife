@@ -133,6 +133,51 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 });
+//----------------------------------------- mail sending--------------------------------------
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-const section = document.querySelector('.achievements');
-if (section) observer.observe(section);
+    let name = document.querySelector("input[name='name']").value;
+    let email = document.querySelector("input[name='email']").value;
+    let phone = document.querySelector("input[name='phone']").value;
+    let message = document.querySelector("textarea[name='message']").value;
+
+    let option = document.getElementById("sendOption").value;
+
+    // WhatsApp message
+    let whatsappMsg = `Hello Medilife Pathology,%0A
+Name: ${name}%0A
+Email: ${email}%0A
+Phone: ${phone}%0A
+Message: ${message}`;
+
+    // ✅ OPTION CHECK
+    if (option === "whatsapp") {
+        window.open(`https://wa.me/919119625967?text=${whatsappMsg}`, "_blank");
+    }
+
+    else if (option === "email") {
+        fetch("https://formsubmit.co/ajax/medilifepathmrj@gmail.com", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                phone: phone,
+                message: message
+            })
+        })
+        .then(response => {
+            alert("Email Sent Successfully!");
+        })
+        .catch(error => {
+            alert("Error sending email");
+        });
+    }
+
+    else {
+        alert("Please select an option!");
+    }
+});
