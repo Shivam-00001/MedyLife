@@ -158,7 +158,7 @@ Message: ${message}`;
 
     else if (option === "email") {
 
-        fetch("https://formsubmit.co/ajax/shivambharati261@gmail.com", {
+        fetch("https://formsubmit.co/ajax/6cd53db3b56c5528977b7b762ae1c797", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
